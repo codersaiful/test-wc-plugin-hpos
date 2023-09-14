@@ -16,6 +16,16 @@
  * Text Domain: wcmmq
  * Domain Path: /languages/
  */
+// add_action( 'before_woocommerce_init', function() {
+// 	if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+// 		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
+// 	}
+// } );
+add_action('plugins_loaded','test_wc_plugin_loaded');
+function test_wc_plugin_loaded()
+{
+
+}
 
 add_filter('woocommerce_loop_add_to_cart_args','test_hpos_wc_args_handle', 9999, 2);
 add_filter('woocommerce_quantity_input_args','test_hpos_wc_args_handle', 9999, 2);
